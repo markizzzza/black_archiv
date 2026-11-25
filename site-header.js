@@ -88,9 +88,6 @@
     if (event.key === 'Escape' && layer.classList.contains('is-open')) setMenuOpen(false);
   });
 })();
-
-// Обе иллюстрации книги переключаются в обе стороны. Код находится
-// в общем скрипте, чтобы на всех страницах использовался один источник логики.
 document.addEventListener('DOMContentLoaded', () => {
   const mainBook = document.getElementById('book-animation');
   if (mainBook && mainBook.dataset.initialized !== 'true') {
