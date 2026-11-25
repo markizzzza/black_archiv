@@ -1,4 +1,3 @@
-/* Общая шапка сайта «Чёрный архив» */
 #site-header { position: sticky; top: 0; z-index: 1050; }
 .site-header {
   position: relative;
@@ -6,6 +5,31 @@
   background: #5a1f1f;
   border-bottom: 1px solid rgba(207, 210, 170, .28);
   box-shadow: 0 5px 18px rgba(0, 0, 0, .22);
+  transition: background-color .24s ease, border-color .24s ease, box-shadow .24s ease;
+}
+.site-header::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: #5a1f1f;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+#site-header.is-scrolled .site-header,
+#site-header:hover .site-header,
+#site-header:focus-within .site-header {
+  background: #5a1f1f;
+  border-bottom: 1px solid rgba(207, 210, 170, .28);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .22);
+}
+#site-header.is-scrolled .site-header::after,
+#site-header:hover .site-header::after,
+#site-header:focus-within .site-header::after {
+  opacity: 0;
 }
 .site-header-inner {
   width: 100%;

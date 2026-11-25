@@ -3,6 +3,13 @@
   if (!mount || mount.dataset.initialized === 'true') return;
   mount.dataset.initialized = 'true';
 
+  const updateHeaderScrollState = () => {
+    mount.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+  updateHeaderScrollState();
+  window.addEventListener('scroll', updateHeaderScrollState, { passive: true });
+  window.addEventListener('pageshow', updateHeaderScrollState);
+  
   mount.innerHTML = `
     <header class="site-header">
       <nav class="site-header-inner" aria-label="Основная навигация">
